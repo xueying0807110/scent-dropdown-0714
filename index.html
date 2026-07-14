@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" as="image" href="product-image.webp" type="image/webp" />
   <title>Lumora Scented Candle — Dropdown</title>
   <style>
     :root {
@@ -346,7 +347,11 @@
     <section class="image-panel" aria-label="Product image area">
       <img
         class="product-image"
-        src="product-image.png"
+        src="product-image.webp"
+        width="900"
+        height="900"
+        decoding="async"
+        fetchpriority="high"
         alt="Lumora scented candle with a silver lid"
       />
     </section>
