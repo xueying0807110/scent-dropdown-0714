@@ -667,6 +667,9 @@
 
       endOptionHover();
       const hoveredOptions = SCENTS.filter((scent) => optionHoverStats[scent].enterCount > 0);
+      const pageCompleteTimestamp = Date.now();
+      const pageCompleteTime = new Date(pageCompleteTimestamp).toISOString();
+      const pageDurationMs = Math.max(0, pageCompleteTimestamp - pageOpenTimestamp);
 
       const result = {
         type: 'netlify_complete',
@@ -679,6 +682,8 @@
         displayCondition: 'dropdown',
         presentationFormat: 'dropdown',
         pageOpenTime,
+        pageCompleteTime,
+        pageDurationMs: String(pageDurationMs),
         firstDropdownOpenTime,
         firstOptionClickTime,
         dropdownOpenCount: String(dropdownOpenCount),
